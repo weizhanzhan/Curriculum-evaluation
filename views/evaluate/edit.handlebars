@@ -1,0 +1,56 @@
+
+<form action="/evaluate/edit" method="post">
+  <input type="hidden" name="id" value="{{lesson._id}}">
+  <label for="slectLesson">选择课程</label>
+  <select class="form-control" id="lesson" name="lesson" >
+   <option value="语文">语文</option>
+   <option value="高数">高数</option>
+   <option value="英语">英语</option>
+   <option value="思修">思修</option>
+ </select>
+  <div class="form-group">
+    <label for="exampleInputPassword1">课程分数</label>
+    <input  class="form-control" id="lessonScore" required name="lessonScore" placeholder="课程分数" value="{{lesson.lessonScore}}">
+  </div>
+  <label for="teacherScore">老师评分(A is Best)</label>
+  <select class="form-control" id="teacherScore" name="teacherScore">
+   <option value="A">A</option>
+   <option value="B">B</option>
+   <option value="C">C</option>
+
+ </select>
+ <br>
+  <button type="submit" class="btn btn-primary">修改</button>
+</form>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+      
+      switch("{{lesson.lesson}}"){
+           case '语文':
+               $("#lesson option[value='语文']").attr("selected",true)
+               break;
+            case '高数':
+               $("#lesson option[value='高数']").attr("selected",true)
+               break;
+            case '英语':
+               $("#lesson option[value='英语']").attr("selected",true)
+               break;
+            case '思修':
+               $("#lesson option[value='思修']").attr("selected",true)
+               break;
+      }
+      switch("{{lesson.teacherScore}}"){
+           case 'A':
+               $("#teacherScore option[value='A']").attr("selected",true)
+               break;
+            case 'B':
+               $("#teacherScore option[value='B']").attr("selected",true)
+               break;
+            case 'C':
+               $("#teacherScore option[value='C']").attr("selected",true)
+               break;
+      }
+
+
+  </script>
+  

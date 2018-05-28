@@ -1,0 +1,26 @@
+{{#each error}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+<form action="/user/register" method="post">
+     <img class="logo" src="/img/logo.png"><br>
+  <div class="form-group">
+    <label for="exampleInputEmail1">用户名</label>
+    <input class="form-control" name="name" type="text" value="{{name}}" placeholder="请输入用户名"> 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">邮箱</label>
+    <input type="email" class="form-control" name="email" value="{{email}}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password" value="{{password}}" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword2">Password</label>
+    <input type="password" class="form-control" name="password2" value="{{password2}}" id="exampleInputPassword2" placeholder="确认密码">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

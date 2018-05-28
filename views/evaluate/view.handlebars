@@ -1,0 +1,52 @@
+
+<script>
+    var a=0;
+    Date.prototype.format = function(fmt) { 
+     var o = { 
+        "M+" : this.getMonth()+1,                 //月份 
+        "d+" : this.getDate(),                    //日 
+        "h+" : this.getHours(),                   //小时 
+        "m+" : this.getMinutes(),                 //分 
+        "s+" : this.getSeconds(),                 //秒 
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+        "S"  : this.getMilliseconds()             //毫秒 
+    }; 
+    if(/(y+)/.test(fmt)) {
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+    }
+     for(var k in o) {
+        if(new RegExp("("+ k +")").test(fmt)){
+             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+         }
+     }
+    return fmt; 
+}   
+</script>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+{{#each lessons}}
+
+<div class="card card-body mb-2">
+    
+    <h3>{{lesson}}</h3>
+    <p id="date{{@index}}"></p>
+    <p>课程分数:{{lessonScore}}</p>
+    <p>教师分数:{{teacherScore}}</p>
+    <a  class="btn btn-outline-primary" href="/evaluate/edit/{{id}}">编辑</a>
+    <a  class="btn btn-outline-secondary" onclick="Delete('{{id}}')">删除</a>
+</div>
+<script>
+    a+=1;
+    var lessondate="{{date}}"
+    var data=new Date(lessondate)
+    document.getElementById("date"+(a-1)).innerHTML="时间："+data.format("yyyy-MM-dd hh:mm:ss")
+    function Delete(id){
+        var r=confirm("确定删除？");
+        if(r)
+           window.location.href="/evaluate/delete/"+id
+       
+        
+    }
+</script>
+{{else}}
+<p>还没有评价记录</p>
+{{/each}}

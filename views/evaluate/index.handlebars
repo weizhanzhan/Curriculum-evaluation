@@ -1,0 +1,23 @@
+
+<form action="/evaluate" method="post">
+  <label for="slectLesson">选择课程</label>
+  <select class="form-control" name="lesson">
+   <option>语文</option>
+   <option>高数</option>
+   <option>英语</option>
+   <option>思修</option>
+ </select>
+  <div class="form-group">
+    <label for="exampleInputPassword1">课程分数</label>
+    <input  class="form-control" id="lessonScore" required name="lessonScore" placeholder="课程分数">
+  </div>
+  <label for="teacherScore">老师评分(A is Best)</label>
+  <select class="form-control" name="teacherScore">
+   <option>A</option>
+   <option>B</option>
+   <option>C</option>
+
+ </select>
+ <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
