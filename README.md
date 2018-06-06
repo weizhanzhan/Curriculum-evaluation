@@ -7,5 +7,6 @@
 ![image](https://github.com/weizhanzhan/kcpj/blob/master/view/login.PNG)<br/>
 ![image](https://github.com/weizhanzhan/kcpj/blob/master/view/register.PNG)<br/>
 ![image](https://github.com/weizhanzhan/kcpj/blob/master/view/pingjia.PNG)<br/>
+![image](https://github.com/weizhanzhan/kcpj/blob/master/view/yipingjia.PNG)<br/>
 ![image](https://github.com/weizhanzhan/kcpj/blob/master/view/edit.PNG)<br/>
 ![image](https://github.com/weizhanzhan/kcpj/blob/master/view/delete.PNG)
